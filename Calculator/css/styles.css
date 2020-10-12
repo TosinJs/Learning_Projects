@@ -1,0 +1,39 @@
+body {
+	background-color: beige;
+}
+
+.btn-success {
+	background-color: black;
+}
+
+#below-row{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+form {
+	margin-top: 100px;
+	padding: 50px 20px 20px 20px;
+	border: 2px solid black;
+	height: 360px;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: turquoise;
+}
+
+input {
+	height: 50px;
+	font-size: 20px;
+	border: 1px solid black;
+}
+
+#output {
+	font-weight: bolder;
+	color: black;
+}
+
+button {
+	margin: 10px 0px 0px 0px;
+}
+
