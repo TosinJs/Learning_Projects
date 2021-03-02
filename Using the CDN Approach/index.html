@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="files/App.css">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/javascript" src="files/clothes.js"></script>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app"></div>
+
+    <script type="text/babel">
+        
+
+        function RenderClothes ({clothes}) {
+            console.log(clothes)
+            return (
+                <div key={clothes.id} className="col-md-4 col-sm-6 col-12 mt-3">
+                     <div className="card">
+                          <div className="card-body">
+                              {clothes.label ? <span className="badge">New</span>
+                             : null }
+                             <img className="card-img bg-light" src={clothes.image}
+                             width="215px" height="250px" />
+                             <a herf="#" className="card-link text-body">{clothes.name}</a>
+                             <p><strong>{clothes.price}</strong></p>
+                         </div>
+                     </div>
+                </div>
+                 )
+                }
+
+        class App extends React.Component {
+            constructor(props) {
+            super(props);
+
+            this.state = {
+                clothes: CLOTHES
+                }
+            }
+            render() {
+                const Clothes = this.state.clothes.map((cloth) => {
+                    return (
+                         <RenderClothes key={cloth.id} clothes={cloth} />
+                        )
+                    })
+                return(
+                    <div className="container">
+                    <div className="row m-auto">
+                         {Clothes}
+                    </div>
+                     </div>
+                         )}
+                    }
+        ReactDOM.render(<App />, document.getElementById('app'));
+    </script>
+</body>
+</html>

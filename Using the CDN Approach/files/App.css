@@ -1,0 +1,12 @@
+.card-body {
+    position: relative;
+}
+.badge {
+    position: absolute;
+    top: 30px;
+    left: 24px;
+    background-color: orange;
+}
+.card {
+    border: 0px;
+}
